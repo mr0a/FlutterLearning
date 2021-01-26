@@ -26,4 +26,14 @@
 - To overcome this problem we need to change the widget to a stateful widget.
 ![Stateful vs Stateless](states.png)
 
-![Output](output.png)
+### Stateful Widget
+- Two classes create a stateful widget:
+    - `State` class (along with pointer to the Widget class) to persist data
+    - `StatefulWidget` class to recreate widget on state change
+- Connection is created between State class and Widget class.
+- Value is updated in `setState` class method given by `State` class.
+- Now if the data or state changes the widget gets recreated.
+
+
+![Before Click](Output1.png)
+![After Click](Output2.png)
