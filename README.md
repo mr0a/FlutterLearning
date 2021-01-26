@@ -20,6 +20,10 @@
 - A function can be passed to `onPressed` to do some action.
 
 ### State in Flutter
+- We have created a list of questions and button increases a count so that we can show the questions in the list.
+- But the count increases but doesn't gets updated in the screen.
+- It is because the widget is stateless.
+- To overcome this problem we need to change the widget to a stateful widget.
 ![Stateful vs Stateless](states.png)
 
 ![Output](output.png)

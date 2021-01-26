@@ -4,7 +4,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   var questions = ['What is your favourite color?', 'What is your favourite Animal?'];
-  var count = 0;
+  var count = 1;
   @override
   Widget build(BuildContext context) {
     //  MaterialApp sets up the basic things needed to show content in the screen
