@@ -23,15 +23,18 @@
 - We have created a list of questions and button increases a count so that we can show the questions in the list.
 - But the count increases but doesn't gets updated in the screen.
 - It is because the widget is stateless.
-- To overcome this problem we need to change the widget to a stateful widget.
+- To overcome this problem(recreate UI when state changes) we need to change the widget to a stateful widget.
 ![Stateful vs Stateless](states.png)
 
 ### Stateful Widget
 - Two classes create a stateful widget:
     - `State` class (along with pointer to the Widget class) to persist data
     - `StatefulWidget` class to recreate widget on state change
+- `State` class is created as private class to prevent using it from other files.
 - Connection is created between State class and Widget class.
 - Value is updated in `setState` class method given by `State` class.
+- `setState` takes a anonymous function.
+- `setState` forces flutter to re-render the widget (only in which the state has changed).
 - Now if the data or state changes the widget gets recreated.
 
 

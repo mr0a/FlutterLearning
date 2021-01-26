@@ -9,13 +9,14 @@ class MyApp extends StatefulWidget{
 
   @override //  createState is provided by StatefulWidget
   //  Part 2: Connects this widget with the state and returns the Created State
-  State<StatefulWidget> createState() => MyAppState();
+  State<StatefulWidget> createState() => _MyAppState();
 }
 
 //  State is a generic class
-class MyAppState extends State<MyApp>{  //  Part 1: Connecting State of MyApp with the Widget using pointer in <>
-  var questions = ['What is your favourite color?', 'What is your favourite Animal?'];
-  var count = 0;
+//  _ makes the class or variable private (only accessible in the file)
+class _MyAppState extends State<MyApp>{  //  Part 1: Connecting State of MyApp with the Widget using pointer in <>
+  var _questions = ['What is your favourite color?', 'What is your favourite Animal?'];
+  var _count = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,11 +26,11 @@ class MyAppState extends State<MyApp>{  //  Part 1: Connecting State of MyApp wi
         ),
         body: Column(
           children: [
-            Text(questions[count]),
-            Text('Count is $count'),
+            Text(_questions[_count]),
+            Text('Count is $_count'),
             //  Changing of state is done in a function and passed to setState function
-            RaisedButton(child: Text('Next'), onPressed: () => setState( () => count++ )),
-            RaisedButton(child: Text(count==0 ? 'Question 1': 'Question 2'), )
+            RaisedButton(child: Text('Next'), onPressed: () => setState( () => _count++ )),
+            RaisedButton(child: Text(_count==0 ? 'Question 1': 'Question 2'), )
           ],
         ),
       ),
