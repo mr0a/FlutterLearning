@@ -16,7 +16,10 @@
 
 ### RaisedButton
 - To create a button.
-- No required arguments.
+- `onPressed` is a required argument(will get a warning if not used).
 - A function can be passed to `onPressed` to do some action.
+
+### State in Flutter
+![Stateful vs Stateless](states.png)
 
 ![Output](output.png)

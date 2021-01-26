@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
+  var questions = ['What is your favourite color?', 'What is your favourite Animal?'];
+  var count = 0;
   @override
   Widget build(BuildContext context) {
     //  MaterialApp sets up the basic things needed to show content in the screen
@@ -16,8 +18,11 @@ class MyApp extends StatelessWidget{
         body: Column(
           // Column is used to put multiple widget in a screen
           children: [
-            Text('How are you?'),
-            RaisedButton(child: Text('I\'m fine'), onPressed: ()=>print('He\'s fine'),),
+            Text(questions[count]),
+            RaisedButton(child: Text('I\'m fine'), onPressed: (){
+              count++;
+              print(count);
+            },),
             RaisedButton(child: Text('I\'m not fine'), )
           ],
         ),
