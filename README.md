@@ -9,7 +9,14 @@
 ### Scaffold    (provided by material library)
 - This creates a basic white background for the app.
 - `appbar` will create a appbar at the top.
+- Pass widget to `body` to show the content to the main screen.
 
+### Column
+- To pass multiple widgets use `column` which takes a list of widgets.
 
+### RaisedButton
+- To create a button.
+- No required arguments.
+- A function can be passed to `onPressed` to do some action.
 
 ![Output](output.png)

@@ -13,7 +13,14 @@ class MyApp extends StatelessWidget{
         appBar: AppBar(
           title: Text('Basic App'),
         ),
-        body: Text('Hello Everyone'),
+        body: Column(
+          // Column is used to put multiple widget in a screen
+          children: [
+            Text('How are you?'),
+            RaisedButton(child: Text('I\'m fine'), onPressed: ()=>print('He\'s fine'),),
+            RaisedButton(child: Text('I\'m not fine'), )
+          ],
+        ),
       ),
     );
   }
