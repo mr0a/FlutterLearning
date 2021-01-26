@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget{
           // Column is used to put multiple widget in a screen
           children: [
             Text(questions[count]),
+            Text('Count is $count'),
             RaisedButton(child: Text('I\'m fine'), onPressed: (){
               count++;
               print(count);
