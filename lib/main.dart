@@ -10,13 +10,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  void _decrement() {
-    setState(() => {_count--});
-  }
+  void _decrement() => setState(() => {_count--});
 
-  void _increment() {
-    setState(() => _count++);
-  }
+  void _increment() => setState(() => _count++);
 
   var _questions = [
     {
@@ -43,10 +39,9 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             Question(_questions[_count]['question']),
-            Option((_questions[_count]['option'] as List<String>)[0]),
-            Option((_questions[_count]['option'] as List<String>)[1]),
-            Option((_questions[_count]['option'] as List<String>)[2]),
-            Option((_questions[_count]['option'] as List<String>)[3]),
+            ...(_questions[_count]['option'] as List<String>)
+                .map((e) => Option(e, _increment))
+                .toList(),
             RaisedButton(
                 child: Text('Next'),
                 onPressed: _count != _questions.length - 1 ? _increment : null),

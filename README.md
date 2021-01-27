@@ -46,5 +46,6 @@ it wont work unless we put it in a container and add some width to the text.
 - enums
 - multiple constructors
 - Map or {} (like dictionary in python)
-
+- <iterable>.toList() - Used to convert a iterable(output of map) to a list.
+- ...list - used to spread list of items into individual items.
 ![Before Click](output.png)
