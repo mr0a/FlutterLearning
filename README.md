@@ -48,4 +48,9 @@ it wont work unless we put it in a container and add some width to the text.
 - Map or {} (like dictionary in python)
 - <iterable>.toList() - Used to convert a iterable(output of map) to a list.
 - ...list - used to spread list of items into individual items.
+
+### final vs const
+- `final` is runtime constant - We won't change once instantiated(runtime)
+- `const` is compile time constant - We won't change once assigned(during coding)
+- `var numbers = const [1,2,3]` makes the list(value) immutable.
 ![Before Click](output.png)

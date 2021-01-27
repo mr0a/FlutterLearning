@@ -1,6 +1,6 @@
 import 'package:counter_app/question.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_app/Option.dart';
+import 'package:counter_app/Quiz.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,11 +10,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  void _decrement() => setState(() => {_count--});
-
-  void _increment() => setState(() => _count++);
-
-  var _questions = [
+  static const _questions = [
     {
       'question': 'What is your favourite color?',
       'option': ['Black', 'Blue', 'Green', 'White']
@@ -28,6 +24,11 @@ class _MyAppState extends State<MyApp> {
       'option': ['Biryani', 'Parotta', 'Dosa', 'Idli']
     }
   ];
+
+  void _decrement() => setState(() => _count--);
+
+  void _increment() => setState(() => _count++);
+
   var _count = 0;
   @override
   Widget build(BuildContext context) {
@@ -36,20 +37,11 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('Basic App'),
         ),
-        body: Column(
-          children: [
-            Question(_questions[_count]['question']),
-            ...(_questions[_count]['option'] as List<String>)
-                .map((e) => Option(e, _increment))
-                .toList(),
-            RaisedButton(
-                child: Text('Next'),
-                onPressed: _count != _questions.length - 1 ? _increment : null),
-            RaisedButton(
-                child: Text('Previous'),
-                onPressed: _count > 0 ? _decrement : null)
-          ],
-        ),
+        body: _count < _questions.length
+            ? Quiz(quizData: _questions[_count], increment: _increment, decrement: _decrement)
+            : Center(
+                child: Text('You did it!!!'),
+              ),
       ),
     );
   }
