@@ -37,6 +37,9 @@
 - `setState` forces flutter to re-render the widget (only in which the state has changed).
 - Now if the data or state changes the widget gets recreated.
 
+### Text Widget
+- In `style` argument we can pass `TextStyle` widget to add styling like size, font, etc.
+- `textAlign` argument takes an enum `TextAlign`. But since the Text widget takes the size only needed for text,
+it wont work unless we put it in a container and add some width to the text.
 
-![Before Click](Output1.png)
-![After Click](Output2.png)
+![Before Click](output.png)
