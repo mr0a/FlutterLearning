@@ -42,4 +42,9 @@
 - `textAlign` argument takes an enum `TextAlign`. But since the Text widget takes the size only needed for text,
 it wont work unless we put it in a container and add some width to the text.
 
+### Dart features
+- enums
+- multiple constructors
+- Map or {} (like dictionary in python)
+
 ![Before Click](output.png)
