@@ -39,8 +39,15 @@ class _MyAppState extends State<MyApp> {
       ]
     }
   ];
-  var _count = 0;
-  var _totalScore = 0;
+  int _count = 0;
+  int _totalScore = 0;
+
+  void _reset(){
+    setState( (){
+      _count = 0;
+      _totalScore = 0;
+    });
+  }
 
   void _decrement() => setState(() => _count--);
 
@@ -64,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                   quizData: _questions[_count],
                   increment: _increment,
                   decrement: _decrement)
-              : Result(_totalScore)),
+              : Result(_totalScore, _reset)),
     );
   }
 }

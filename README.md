@@ -53,4 +53,12 @@ it wont work unless we put it in a container and add some width to the text.
 - `final` is runtime constant - We won't change once instantiated(runtime)
 - `const` is compile time constant - We won't change once assigned(during coding)
 - `var numbers = const [1,2,3]` makes the list(value) immutable.
-![Before Click](output.png)
+
+### Module 1 End
+- Created a quiz app with score display and quiz reset.
+- Basics of Dart
+- Basics of flutter
+
+![Final Output](output.png)
+
+![Module Summary](module_summary.png)
