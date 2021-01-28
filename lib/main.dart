@@ -1,4 +1,4 @@
-import 'package:counter_app/question.dart';
+import 'package:counter_app/Result.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_app/Quiz.dart';
 
@@ -13,36 +13,58 @@ class _MyAppState extends State<MyApp> {
   static const _questions = [
     {
       'question': 'What is your favourite color?',
-      'option': ['Black', 'Blue', 'Green', 'White']
+      'option': [
+        {'text': 'Black', 'score': 5},
+        {'text': 'Blue', 'score': 4},
+        {'text': 'Green', 'score': 3},
+        {'text': 'White', 'score': 2}
+      ]
     },
     {
       'question': 'What is your favourite animal?',
-      'option': ['Tiger', 'Lion', 'Monkey', 'Human']
+      'option': [
+        {'text': 'Tiger', 'score': 5},
+        {'text': 'Lion', 'score': 4},
+        {'text': 'Monkey', 'score': 3},
+        {'text': 'Human', 'score': 2}
+      ]
     },
     {
       'question': 'What is your favourite food?',
-      'option': ['Biryani', 'Parotta', 'Dosa', 'Idli']
+      'option': [
+        {'text': 'Biryani', 'score': 5},
+        {'text': 'Parotta', 'score': 4},
+        {'text': 'Dosa', 'score': 3},
+        {'text': 'Idli', 'score': 2}
+      ]
     }
   ];
+  var _count = 0;
+  var _totalScore = 0;
 
   void _decrement() => setState(() => _count--);
 
-  void _increment() => setState(() => _count++);
+  void _increment([int score]) {
+    setState(() {
+      _totalScore += score ??= 0;
+      print(_totalScore);
+      _count++;
+    });
+  }
 
-  var _count = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Basic App'),
-        ),
-        body: _count < _questions.length
-            ? Quiz(quizData: _questions[_count], increment: _increment, decrement: _decrement)
-            : Center(
-                child: Text('You did it!!!'),
-              ),
-      ),
+          appBar: AppBar(
+            title: Text('Basic App'),
+          ),
+          body: _count < _questions.length
+              ? Quiz(
+                  quizData: _questions[_count],
+                  increment: _increment,
+                  decrement: _decrement)
+              : Result(_totalScore)),
     );
   }
 }

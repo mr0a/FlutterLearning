@@ -16,8 +16,8 @@ class Quiz extends StatelessWidget {
     return Column(
       children: [
         Question(quizData['question']),
-        ...(quizData['option'] as List<String>)
-            .map((e) => Option(e, increment))
+        ...(quizData['option'] as List<Map<String, Object>>)
+            .map((e) => Option(e['text'], ()=>increment(e['score'])))
             .toList(),
         RaisedButton(child: Text('Next'), onPressed: increment),
         RaisedButton(child: Text('Previous'), onPressed: decrement)
