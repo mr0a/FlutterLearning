@@ -61,4 +61,4 @@ it wont work unless we put it in a container and add some width to the text.
 
 ![Final Output](output.png)
 
-![Module Summary](module_summary.png)
+![Module Summary](modulesummary.png)
